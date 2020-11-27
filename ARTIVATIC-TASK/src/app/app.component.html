@@ -1,0 +1,19 @@
+<h1 class="text-center text-success border">FRONT END TASK FOR ARTIVATIC.AI</h1>
+<div class="form-group">
+    <select formControlName="state" class="form-control" (change)="onChangeState($event.target.value)">
+      <option value="">Select State...</option>
+      <option *ngFor= "let state of stateNames" [value]="state">{{state}}</option>
+   </select>
+</div>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-6"><h5>Cites of the Selected State</h5>
+       <p *ngFor= "let city of cityNames">{{city}}</p> 
+      </div>
+
+    <div class="col-md-12 col-lg-6" ><h5>Cities on Map</h5>
+      <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom"></agm-map>
+    </div>
+ 
+    </div>
+</div>
